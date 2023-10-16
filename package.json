@@ -2,7 +2,7 @@
   "name": "github-user-search-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://{megaemr3}.github.io/{github-user-search-app-React}",
+  "homepage": "http://megaemr3.github.io/github-user-search-app-React",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
