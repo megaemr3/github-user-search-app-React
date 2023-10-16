@@ -1,0 +1,221 @@
+:root {
+  --main-color: #141C2F;
+  --secondary-color: #1F2A48;
+  --button-color: #0079FE;
+  --text-color: white;
+  --link-color: white;
+}
+body {
+  margin: 0;
+  background-color: var(--main-color);
+  color: var(--text-color);
+  font-family: 'IBM Plex Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root > div {
+  width: 50%;
+  margin: 0 auto;
+  padding: 10% 0;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--link-color);
+}
+h1 {
+  font-size: 1.2rem;
+}
+.heading span {
+  font-size: 0.6rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.heading svg {
+  width: 1rem;
+  color: var(--link-color);
+  vertical-align: bottom;
+  position: relative;
+  top: 0.3rem;
+}
+.inputArea {
+  margin: 1.5rem 0;
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.6rem;
+  position: relative;
+}
+input {
+  flex-grow: 9;
+  background-color: transparent;
+  border: none;
+  color: var(--text-color);
+  outline: none;
+}
+input::placeholder {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--text-color);
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold;
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+}
+svg {
+  flex-grow: 1;
+  color: var(--button-color);
+}
+
+.info-container {
+  background-color: var(--secondary-color);
+  border-radius: 0.6rem;
+  padding: 7%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: repeat(4, auto);
+  position: relative;
+}
+.info-container:after, .inputArea:after {
+  content: " ";
+  width: 75%;
+  height: 10px;
+  position: absolute;
+  background-color: yellow;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 10px 0 50px #1e1e1e;
+  z-index: -1;
+}
+.info-container > img {
+  width: 80%;
+  border-radius: 50%;
+  grid-area: 1 / 1 / 3 / 2;
+}
+.info-head {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-flow:row wrap;
+}
+.info-head span:first-child {
+  color: var(--link-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.info-head * {
+  width: 50%
+}
+.info-head span:nth-child(2) {
+  font-size: 0.8rem;
+  text-align: end;
+  position: relative;
+  top: 0.5rem;
+}
+.info-head a {
+  color: var(--button-color);
+  font-size: 0.9rem;
+  line-height:2.5;
+}
+.bio-text {
+  grid-area: 2 / 2 / 3 / 3;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #C2C5CE;
+}
+.numbers {
+  background-color: var(--main-color);
+  color: var(--link-color);
+  margin-top: 1.5rem;
+  border-radius: 0.4rem;
+  padding: 4% 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  grid-area: 3/2/4/3;
+}
+.numbers * {
+  flex: 33%;
+}
+.numbers span:nth-child(1), .numbers span:nth-child(2), .numbers span:nth-child(3) {
+  font-size: 0.7rem;
+}
+.numbers span:nth-child(4), .numbers span:nth-child(5), .numbers span:nth-child(6) {
+  line-height: 1.8;
+  font-weight: bold;
+}
+
+.link-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  grid-area: 4/2/5/3;
+  margin-top: 2rem;
+}
+
+.link-section * {
+  font-size: 0.8rem;
+  flex: 50%;
+  margin-bottom: 0.3rem;
+}
+
+.link-section svg {
+  width: 1.3rem;
+  position: relative;
+  top: 0.8rem;
+  margin-right: 0.7rem;
+  color: var(--link-color);
+}
+
+@media only screen and (max-width: 991px) {
+  #root > div {
+    width: 80%;
+  }
+  .info-container {
+    padding: 10% 5%;
+  }
+  .info-container > img {
+    grid-area: 1/1/2/2;
+  }
+  .info-head {
+    margin-left: 1rem;
+  }
+  .info-head * {
+    width: 100%
+  }
+  .info-head span:nth-child(2) {
+    order: 1;
+    text-align: left;
+    top: 0;
+  }
+  .bio-text {
+    grid-area: 2 / 1 / 3 / 3;
+    
+  }
+  .numbers {
+    grid-area: 3/1/4/3;
+  }
+  .link-section {
+    grid-area: 4/1/5/3;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #root > div {
+    width: 90%;
+  }
+  .link-section * {
+    flex: 100%;
+  }
+}
